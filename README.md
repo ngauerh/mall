@@ -21,8 +21,7 @@
 	   购物车：增、删、改、查
 	   订单：下单、订单详情，浏览、改状态
 
-登陆页
-![](https://i.imgur.com/ymyfW6f.png)
+
 订单页
 ![](https://i.imgur.com/FooPOcf.png)
 
