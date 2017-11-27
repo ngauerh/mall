@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>购物车-我的购物车</title>
+	<meta name="description" content="购物车，我的购物车">
+	<meta name="Keywords" content="魅族手机官网商城、魅族官方在线商店、魅族在线商城、魅族官网在线商店、魅族商城、魅蓝商城">
+	<link href="./public/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="./public/img/favicon.ico" rel="icon" type="image/x-icon">
+	<!-- Bootstrap -->
+	<link href="./public/css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="./public/js/jquery-1.12.4.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="./public/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./public/css/global.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/app.css">
+	
+	<link rel="stylesheet" type="text/css" href="./public/css/cart.css">
+	<link rel="stylesheet" type="text/css" href="./public/css/cart-app.css">
+	
+	<script type="text/javascript" src="./public/js/rem.js"></script>
+	<script type="text/javascript" src="./public/js/topNav.js"></script>
+</head>
+  
+<body class="cart-app">
+    <!-- 导航 -->
+    <div class="layout-header" id="scroll-wrap">
+		<nav class="navbar navbar-default header hidden-xs hidden-sm">
+			<div class="container clearfix">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="layout-header-logo navbar-left">
+						<a target="_blank" href="base.html" class="layout-header-logo-link" alt="魅族科技">
+							<img src="./public/img/logo.png">
+						</a>
+					</div>
+					<div class="navbar-left">
+						<ol class="breadcrumb">
+							<li class="active">购物车</li>
+							<li>确认订单</li>
+							<li>在线支付</li>
+							<li>完成 </li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- 移动端结构 -->
+		<div class="scroll-view">
+			<header id="header" class="header">
+				<div class="logo">
+					<a href="base.html">
+					  <img src="./public/img/app/mlogo1.jpg">
+					</a>
+				</div>
+				<div class="qtool">
+					<a id="btn-search">
+					  <i class="glyphicon  glyphicon-search"></i>
+					</a>
+					<a href="#">
+					  <i class="glyphicon  glyphicon-shopping-cart"></i>
+					</a>
+					<a id="user-name" href="#">
+					  <i class="glyphicon glyphicon-user"></i>
+					</a>
+				</div>
+			</header>
+		</div>
+    </div>
+    <!-- 导航 E-->
+    <!-- 主内容区域 -->
+    <div class="mainbody cart">
+		<div class="container">
+			<!-- 购物车详情头 -->
+			<table class="cart-header">
+				<tbody>
+					<tr>
+						<td class="cart-col-select col-md-3 col-xs-3 col-sm-3">
+							<div class="cart-select-all JSelectAll">
+								<div class="mz-checkbox"></div>
+								<span class="cart-select-title">全选</span>
+							</div>
+						</td>
+						<td class="cart-col-name col-md-3 hidden-xs hidden-sm">商品</td>
+						<td class="cart-col-price col-md-2 hidden-xs hidden-sm">单价(元)</td>
+						<td class="cart-col-number col-md-2 hidden-xs hidden-sm">数量</td>
+						<td class="cart-col-total col-md-1 hidden-xs hidden-sm">小计(元)</td>
+					</tr>
+				</tbody>
+			</table><!-- 购物车详情头 E-->
+			
+			<!-- 购物清单信息列表 -->
+			<div class="cart-merchant-list">
+				<div class="cart-merchant">
+					<table class="cart-merchant-body">
+						<tbody>
+							<tr class="cart-product" id="pro5">
+								<td class="cart-col-select col-md-3 col-xs-4 col-sm-4">  
+									<div class="mz-checkbox "></div> 
+									<a href="detail.html" class="cart-product-link" target="_blank">
+										<img src="public/img/cart/cart2.png" class="cart-product-img" alt="魅蓝 X">
+									</a>
+								</td>
+								<td class="cart-col-name col-md-3 col-xs-8 col-sm-8">
+									<a href="detail.html" class="cart-product-link" target="_blank">
+									  <p>魅蓝 X</p>
+									  <span class="cart-product-desc">全网通公开版 流光金 32GB</span>
+									</a>
+									<p class="">
+										<span class="cart-product-price">1499.00</span>
+									</p>
+									<div class="cart-col-number">
+										<div class="cart-product-number-adder">
+											<p class="cart-product-number-max show"></p>
+											<div class="mz-adder">
+												<button class="mz-adder-subtract disabled"></button>
+												<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+												<button class="mz-adder-add"></button>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-price col-md-2 hidden-xs hidden-sm">
+									<p>
+										<span class="cart-product-price">1499.00</span>
+									</p>
+								</td>
+								<td class="cart-col-number col-md-2 hidden-xs hidden-sm">
+									<div class="cart-product-number-adder">
+										<p class="cart-product-number-max show"></p>
+										<div class="mz-adder">
+											<button class="mz-adder-subtract disabled"></button>
+											<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+											<button class="mz-adder-add"></button>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-total col-md-1 hidden-xs hidden-sm">
+									<span class="cart-product-price total">1499.00</span>
+								</td>
+								<td class="cart-col-ctrl col-md-1 hidden-xs hidden-sm">
+									<div class="cart-product-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</div>
+								</td>
+							</tr>
+							<tr class="cart-product" id="pro4">
+								<td class="cart-col-select col-md-3 col-xs-4 col-sm-4">  
+									<div class="mz-checkbox "></div> 
+									<a href="detail.html" class="cart-product-link" target="_blank">
+										<img src="public/img/cart/cart4.png" class="cart-product-img" alt="魅蓝 X">
+									</a>
+								</td>
+								<td class="cart-col-name col-md-3 col-xs-8 col-sm-8">
+									<a href="detail.html" class="cart-product-link" target="_blank">
+									  <p>魅蓝 X</p>
+									  <span class="cart-product-desc">全网通公开版 珠光白 32GB</span>
+									</a>
+									<p>
+										<span class="cart-product-price">1499.00</span>
+									</p>
+									<div class="cart-col-number">
+										<div class="cart-product-number-adder">
+											<p class="cart-product-number-max show"></p>
+											<div class="mz-adder">
+												<button class="mz-adder-subtract disabled"></button>
+												<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+												<button class="mz-adder-add"></button>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-price col-md-2 hidden-xs hidden-sm">
+									<p>
+										<span class="cart-product-price">1499.00</span>
+									</p>
+								</td>
+								<td class="cart-col-number col-md-2 hidden-xs hidden-sm">
+									<div class="cart-product-number-adder">
+										<p class="cart-product-number-max show"></p>
+										<div class="mz-adder">
+											<button class="mz-adder-subtract disabled"></button>
+											<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+											<button class="mz-adder-add"></button>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-total col-md-1 hidden-xs hidden-sm">
+									<span class="cart-product-price total">1499.00</span>
+								</td>
+								<td class="cart-col-ctrl col-md-1 hidden-xs hidden-sm">
+									<div class="cart-product-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</div>
+								</td>
+							</tr>
+							<tr class="cart-product" id="pro3">
+								<td class="cart-col-select col-md-3 col-xs-4 col-sm-4">  
+									<div class="mz-checkbox "></div> 
+									<a href="detail.html" class="cart-product-link" target="_blank">
+										<img src="public/img/cart/cart5.png" class="cart-product-img" alt="魅族HD50 头戴式耳机">
+									</a>
+								</td>
+								<td class="cart-col-name col-md-3 col-xs-8 col-sm-8">
+									<a href="detail.html" class="cart-product-link" target="_blank">
+									  <p>魅族HD50 头戴式耳机</p>
+									  <span class="cart-product-desc">红色</span>
+									</a>
+									<p>
+										<span class="cart-product-price">399.00</span>
+									</p>
+									<div class="cart-col-number">
+										<div class="cart-product-number-adder">
+											<p class="cart-product-number-max show"></p>
+											<div class="mz-adder">
+												<button class="mz-adder-subtract disabled"></button>
+												<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+												<button class="mz-adder-add"></button>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-price col-md-2 hidden-xs hidden-sm">
+									<p>
+										<span class="cart-product-price">399.00</span>
+									</p>
+								</td>
+								<td class="cart-col-number col-md-2 hidden-xs hidden-sm">
+									<div class="cart-product-number-adder">
+										<p class="cart-product-number-max show"></p>
+										<div class="mz-adder">
+											<button class="mz-adder-subtract disabled"></button>
+											<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+											<button class="mz-adder-add"></button>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-total col-md-1 hidden-xs hidden-sm">
+									<span class="cart-product-price total">399.00</span>
+								</td>
+								<td class="cart-col-ctrl col-md-1 hidden-xs hidden-sm">
+									<div class="cart-product-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</div>
+								</td>
+							</tr>
+							<tr class="cart-product" id="pro2">
+								<td class="cart-col-select col-md-3 col-xs-3 col-sm-3">  
+									<div class="mz-checkbox "></div> 
+									<a href="detail.html" class="cart-product-link" target="_blank">
+										<img src="public/img/cart/cart1.png" class="cart-product-img" alt="魅族智能体脂秤">
+									</a>
+								</td>
+								<td class="cart-col-name col-md-3 col-xs-3 col-sm-3">
+									<a href="detail.html" class="cart-product-link" target="_blank">
+									  <p>魅族智能体脂秤</p>
+									  <span class="cart-product-desc">白色</span>
+									</a>
+									<p>
+										<span class="cart-product-price">169.00</span>
+									</p>
+									<div class="cart-col-number">
+										<div class="cart-product-number-adder">
+											<p class="cart-product-number-max show"></p>
+											<div class="mz-adder">
+												<button class="mz-adder-subtract disabled"></button>
+												<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+												<button class="mz-adder-add"></button>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-price col-md-2 hidden-xs hidden-sm">
+									<p>
+										<span class="cart-product-price">169.00</span>
+									</p>
+								</td>
+								<td class="cart-col-number col-md-2 hidden-xs hidden-sm">
+									<div class="cart-product-number-adder">
+										<p class="cart-product-number-max show"></p>
+										<div class="mz-adder">
+											<button class="mz-adder-subtract disabled"></button>
+											<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+											<button class="mz-adder-add"></button>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-total col-md-1 hidden-xs hidden-sm">
+									<span class="cart-product-price total">169.00</span>
+								</td>
+								<td class="cart-col-ctrl col-md-1 hidden-xs hidden-sm">
+									<div class="cart-product-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</div>
+								</td>
+							</tr>
+							<tr class="cart-product" id="pro1">
+								<td class="cart-col-select col-md-3 col-xs-4 col-sm-4">  
+									<div class="mz-checkbox "></div> 
+									<a href="detail.html" class="cart-product-link" target="_blank">
+										<img src="public/img/cart/cart3.png" class="cart-product-img" alt="魅族 PRO 7">
+									</a>
+								</td>
+								<td class="cart-col-name col-md-3 col-xs-8 col-sm-8">
+									<a href="detail.html" class="cart-product-link" target="_blank">
+									  <p>魅族 PRO 7</p>
+									  <span class="cart-product-desc">全网通公开版 提香红 4GB+64GB</span>
+									</a>
+									<p>
+										<span class="cart-product-price">2880.00</span>
+									</p>
+									<div class="cart-col-number">
+										<div class="cart-product-number-adder">
+											<p class="cart-product-number-max show"></p>
+											<div class="mz-adder">
+												<button class="mz-adder-subtract disabled"></button>
+												<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+												<button class="mz-adder-add"></button>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-price col-md-2 hidden-xs hidden-sm">
+									<p>
+										<span class="cart-product-price">2880.00</span>
+									</p>
+								</td>
+								<td class="cart-col-number col-md-2 hidden-xs hidden-sm">
+									<div class="cart-product-number-adder">
+										<p class="cart-product-number-max show"></p>
+										<div class="mz-adder">
+											<button class="mz-adder-subtract disabled"></button>
+											<div class="mz-adder-num"><input class="mz-adder-input" value="1" type="text"></div>
+											<button class="mz-adder-add"></button>
+										</div>
+									</div>
+								</td>
+								<td class="cart-col-total col-md-1 hidden-xs hidden-sm">
+									<span class="cart-product-price total">2880.00</span>
+								</td>
+								<td class="cart-col-ctrl col-md-1  hidden-xs hidden-sm">
+									<div class="cart-product-remove">
+										<span class="glyphicon glyphicon-remove"></span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div><!-- 购物清单信息列表 E-->
+		</div>
+		<!-- 结算详情 -->
+		<div class="cart-footer" id="cartFooter">
+			<div class="container">
+			   <div class="cart-footer-left col-md-6 col-xs-4 col-sm-4">
+				   <div class="cart-select-all JSelectAll" data-mdesc="全选按钮" data-mtype="store_cart_all">
+						<div class="mz-checkbox"></div>
+						<span class="cart-select-title">全选</span>
+				   </div>
+				   <!-- <span class="cart-remove-selected" id="removeSelected">删除选中的商品</span> -->
+				   <span class="cart-footer-count">
+						共
+						<span class="cart-footer-num" id="totalCount"></span>
+						件商品
+				   </span>
+				</div>
+				<div class="cart-footer-right col-md-5 col-md-offset-1 col-sm-offset-2 col-xs-8 col-sm-6">
+					<span class="cart-footer-sum">
+						<span class="cart-footer-text">已优惠</span>
+						<span class="cart-footer-num red" id="totalDiscount">0.00</span>
+						<span class="cart-footer-text">元， 合计(不含运费)：</span>
+						<span class="cart-footer-total" id="totalPrice"></span>
+					</span>
+					<div class="mz-btn success" id="cartSubmit">去结算</div>
+				</div>
+			</div>
+		</div><!-- 结算详情 E-->
+	</div>
+    <!-- 主内容区域 E-->
+	
+</body>
+
+</html>

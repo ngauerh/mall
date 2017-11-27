@@ -1,0 +1,39 @@
+{% extends "myadmin/base.html" %}
+
+{% block mainbody %}
+
+
+
+
+<form action="{% url 'ht_ordxg' ztxg_list.id %}" method="post">
+    {% csrf_token %}
+        <div class="control-group">
+            <label class="control-label" for="input01">订单状态：</label>
+            <div class="controls">
+                    <input type="radio" name="status" class="input-xlarge" id="input01"
+                    {% if ztxg_list.status == 0 %}
+                        checked
+                    {% endif %}
+                    value="1" /> 新订单
+                    <input type="radio" name="status" class="input-xlarge" id="input01"
+                    {% if ztxg_list.status == 1 %}
+                        checked
+                    {% endif %}
+                    value="2" /> 已发货
+                    <input type="radio" name="status" class="input-xlarge" id="input01"
+                    {% if ztxg_list.status == 2 %}
+                        checked
+                    {% endif %}
+                    value="3" /> 已收货
+                    <input type="radio" name="status" class="input-xlarge" id="input01"
+                    {% if ztxg_list.status == 3 %}
+                        checked
+                    {% endif %}
+                    value="3" /> 无效的订单
+                </div>
+        </div>
+        <button type="submit">更新</button>
+    </form>
+
+
+{% endblock %}

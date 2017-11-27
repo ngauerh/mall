@@ -1,0 +1,34 @@
+{% extends "myadmin/base.html" %}
+
+{% block mainbody %}                
+    <h2>
+        商城网后台管理系统
+    </h2>
+    <div class="hero-unit">
+        <h3>
+            Welcome {{request.session.adminuser}} !
+        </h3>
+        <p>
+            欢迎来到xx商城网后台管理系统
+        </p>
+        <p>
+            <a href="" class="btn btn-primary btn-large">帮助</a> <a class="btn btn-large">关于</a>
+        </p>
+    </div>
+    <div class="well summary">
+        <ul>
+            <li>
+                <a href="#"><span class="count">3</span> Projects</a>
+            </li>
+            <li>
+                <a href="#"><span class="count">27</span> Tasks</a>
+            </li>
+            <li>
+                <a href="#"><span class="count">7</span> Messages</a>
+            </li>
+            <li class="last">
+                <a href="#"><span class="count">5</span> Files</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

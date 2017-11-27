@@ -1,0 +1,53 @@
+{% extends "myadmin/base.html" %}
+
+{% block mainbody %}
+    <h4>
+        商品信息管理
+    </h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>图片</th>
+                <th>商品名称</th>
+                <th>数量</th>
+                <th>单价</th>
+                <th>总额</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vo in detail_list %}
+            <tr>
+                <td><img src="/static/goods/s_{{ vo.picname }}" width="60"/></td>
+                <td>{{ vo.name }}</td>
+                <td>{{ vo.num }}</td>
+                <td>{{ vo.price }}</td>
+                <td>{% widthratio  vo.num 1 vo.price %}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <ul>
+            <li class="disabled">
+                <a href="#">&laquo;</a>
+            </li>
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "myadmin/base.html" %}
+{% load dealwithtime %}
+{% block mainbody %}                
+    <h4>
+        会员信息管理
+    </h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>订单号</th>
+                <th>购买时间</th>
+                <th>购买人</th>
+                <th>地址</th>
+                <th>金额</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in ord_list %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.addtime|dealwithtime }}</td>
+                <td>{{ order.linkman }}</td>
+                <td>{{ order.address }}</td>
+                <td>{{ order.total }}</td>
+                <td>{% if order.status == 0 %} 新订单 {% elif order.status == 1 %}已发货{% elif order.status == 2 %} 已收货 {% elif order.status == 3 %} 无效订单 {% endif %}</td>
+                <td>
+                    <a href="{% url 'ht_orderxq' %}?oid={{ order.id }}" class="view-link">详情</a>
+                    <a href="{% url 'ht_ztxg' order.id %}" class="view-link">状态</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>                
+    <div class="pagination">
+        <ul>
+            <li class="disabled">
+                <a href="#">&laquo;</a>
+            </li>
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "myweb/base.html" %}
+
+{% load static from staticfiles %}
+
+    {% block mylink %}
+        <link rel="stylesheet" type="text/css" href="{% static 'myweb/css/member.css' %}">
+	    <link rel="stylesheet" type="text/css" href="{% static 'myweb/css/member-app.css' %}">
+    {% endblock %}
+	
+
+{% block mainbody %}
+    <!-- 主内容区域 -->
+    <div class="mainbody order">
+		<div class="container">
+			<!-- 面包屑导航 -->
+			<div class="crumbs ">
+				<ol class="breadcrumb">
+					<li class="hidden-xs hidden-sm"><a href="base.html">首页</a></li>
+					<li class="active"><a href="#">我的商城</a></li>
+				</ol>
+			</div><!-- 面包屑导航 E-->
+			
+			<div class="main clearfix">
+				<!-- 左侧导航 -->
+				<div class="left-nav f-fl hidden-xs hidden-sm">
+					<div class="nav-main">
+						<a href="javascript:;" class="type-title"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>订单中心</a>
+						<a href="order.html" class="ml" >我的订单</a>
+						<a href="#" class="ml " >我的回购单</a>
+						<a href="#" class="ml " >我的意外保</a>
+						<a href="javascript:;" class="type-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人中心</a>
+						<a href="#" class="ml " >地址管理</a>
+						<a href="#" class="ml " >我的收藏</a>
+						<a href="#" class="ml " >消息提醒</a>
+						<a href="#" class="ml ">建议反馈</a>
+					</div>
+				</div><!-- 左侧导航 E-->
+				<!-- 右侧内容展示 -->
+                <div style="margin-top: -55px">
+                    <center>
+                        <h3>会员管理</h3>
+                        <hr>
+                    </center>
+
+                    <form id="edit-profile" action="{% url  'edit_memberxg' %}" class="form-horizontal col-md-6 col-md-offset-1" method="post">
+                        {% csrf_token %}
+
+                        <fieldset>
+                            <div class="form-group">
+                                 <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+                                 <div class="col-sm-10">
+                                   <input type="text" class="form-control" id="inputEmail3" name="name" value="{{ message_list.name }}">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                                 <div class="col-sm-10">
+                                   <input type="text" class="form-control" readonly="" id="inputEmail3"  value="{{ message_list.username }}">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <label for="inputEmail3" class="col-sm-2 control-label">性别</label>
+                                 <div class="col-sm-10">
+                                    <input type="radio"  {% if message_list.sex == 1 %} checked {% endif %} name="sex" class="input-xlarge" id="input01" value="1" /> 男
+                                    <input type="radio" {% if message_list.sex == 0 %} checked {% endif %} name="sex" class="input-xlarge" id="input01" value="0" /> 女
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <label for="inputEmail3" class="col-sm-2 control-label">地址</label>
+                                 <div class="col-sm-10">
+                                   <input type="text" class="form-control" id="inputEmail3" name="address" value="{{ message_list.address }}">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <label for="inputEmail3" class="col-sm-2 control-label">邮编</label>
+                                 <div class="col-sm-10">
+                                   <input type="text" class="form-control" id="inputEmail3" name="code" value="{{ message_list.code }}">
+                                 </div>
+                            </div>
+                            <div class="form-group">
+                                 <label for="inputEmail3" class="col-sm-2 control-label">电话</label>
+                                 <div class="col-sm-10">
+                                   <input type="text" class="form-control" id="inputEmail3" name="phone" value="{{ message_list.phone }}">
+                                 </div>
+                            </div>
+                             <div class="form-group">
+                                 <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                                 <div class="col-sm-10">
+                                   <input type="text" class="form-control" id="inputEmail3" name="email" value="{{ message_list.email }}">
+                                 </div>
+                            </div>
+                           <div class="form-group">
+                               <div class="col-sm-offset-2 col-sm-10">
+                                 <button type="submit" class="btn btn-primary">保存</button>
+                                 <button type="reset" class="btn btn-primary">重置</button>
+                               </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                 </div>
+			</div>
+		</div>	
+	</div>
+    <!-- 主内容区域 E-->
+{% endblock %}
+	
